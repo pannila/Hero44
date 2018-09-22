@@ -42,7 +42,7 @@ client.on("message", message => {
     });
   }
  
-  if(message.content.startsWith(prefix + "starthero")) {
+  if(message.content.startsWith(prefix + "herostart")) {
     if(allowedUsers.includes(message.author.id)) {
     setInterval(() => { discoRole(); }, config.ms);
     message.channel.send("```css\nYou now have color roll...```");
@@ -51,7 +51,7 @@ client.on("message", message => {
   }
 } else
  
-if(message.content.startsWith(prefix + "stophero")) {
+if(message.content.startsWith(prefix + "herostop")) {
   if(allowedUsers.includes(message.author.id)) {
   message.channel.send("I've stopped discoing.");
   setTimeout(() => { console.log(process.exit(0)); }, 300);
