@@ -32,12 +32,12 @@ client.on('ready', () => {
  
 client.on("message", message => {
  
-  function discoRole() {
+  function HeroRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
       let theRole = message.guild.roles.find("name", role);
       theRole.edit({color: random}).catch(e => {
-        return message.channel.send(":x: **Error:** The role you specified in the `config.json` is either not a role on this server, or his a role higher than the highest role that I have.");
+        return message.channel.send("");
       });
     });
   }
@@ -63,6 +63,6 @@ if(message.content.startsWith(prefix + "herostop")) {
 });
 const config = require('./config.json');
 const allowedUsers = config.allowedUsers;
-const roles = config.roleToDisco;
+const roles = config.roleToHero;
 
 client.login(process.env.BOT_TOKEN);
