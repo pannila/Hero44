@@ -1,7 +1,0 @@
-{
-  "token" : "Bot token goes here",
-  "ms" : 800,
-  "roleToDisco" : ["Hero"],
-  "prefix" : ",",
-  "allowedUsers" : ["403640956571615243"]
-}
