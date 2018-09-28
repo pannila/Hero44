@@ -19,8 +19,8 @@ client.on('ready', () => {
 });
 client.on('guildCreate', (guild) => {
     let channels = guild.channels.filter(channel => channel.type === 'text' && channel.permissionsFor(guild.members.get(client.user.id)).has('SEND_MESSAGES'));
-    if (channels.size > 0) channels.first().send('welcome');
-});
+    if (channels.size > 0) channels.first().send('by (`youssef_tube#5800`)');
+});    
 client.on('message', (message) => {
     if (message.channel.type !== 'text') return;
     if (message.member.hasPermission('MANAGE_GUILD') || message.member.hasPermission('ADMINISTRATOR') || message.member.id === message.guild.owner.id) {
@@ -28,5 +28,4 @@ client.on('message', (message) => {
         if (message.content === ',herostart') {stop.splice(stop.indexOf(message.guild.id),1); return message.channel.send('hero is starting');}
     }
 })
-
 client.login(process.env.BOT_TOKEN);
