@@ -44,7 +44,7 @@ client.on("message", message => {
  
   if(message.content.startsWith(prefix + "herostart")) {
     if(allowedUsers.includes(message.author.id)) {
-    setInterval(() => { discoRole(); }, config.ms);
+    setInterval(() => { HeroRole(); }, config.ms);
     message.channel.send("```css\nYou now have color roll...```");
   } else {
     message.reply(`You do not have permission to Hero. Continue with the bot owner @youssef_tube#5800`);
