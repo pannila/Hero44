@@ -37,14 +37,14 @@ client.on("message", message => {
     roles.forEach((role) => {
       let theRole = message.guild.roles.find("name", role);
       theRole.edit({color: random}).catch(e => {
-        return message.channel.send("");
+        return message.channel.send("false");
       });
     });
   }
  
   if(message.content.startsWith(prefix + "herostart")) {
     if(allowedUsers.includes(message.author.id)) {
-    setInterval(() => { HeroRole(); }, config.ms);
+    setInterval(() => { DiscoRole(); }, config.ms);
     message.channel.send("```css\nYou now have color roll...```");
   } else {
     message.reply(`You do not have permission to Hero. Continue with the bot owner @youssef_tube#5800`);
@@ -63,6 +63,6 @@ if(message.content.startsWith(prefix + "herostop")) {
 });
 const config = require('./config.json');
 const allowedUsers = config.allowedUsers;
-const roles = config.roleToHero;
+const roles = config.roleToDisco;
 
 client.login(process.env.BOT_TOKEN);
